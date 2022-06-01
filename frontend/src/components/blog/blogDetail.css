@@ -1,0 +1,88 @@
+.blogDetail {
+    padding-block: var(--section-padding);
+    max-width: 700px;
+    margin: auto;
+}
+
+.blogDetail :is(.section-subtitle, .section-title) {
+    text-align: center;
+}
+
+.blogDetail .section-title {
+    margin-bottom: 40px;
+}
+
+.blogDetail-list {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.blogDetail-card {
+    background: var(--white);
+    box-shadow: 0 2px 25px 10px hsla(0, 0%, 0%, 0.1);
+    border-radius: var(--radius-12);
+    overflow: hidden;
+}
+
+.blogDetail-banner {
+    aspect-ratio: 2 / 1.3;
+    overflow: hidden;
+}
+
+.blogDetail-banner :is(a, img) {
+    height: 100%;
+}
+
+.blogDetail-banner img {
+    object-fit: cover;
+    transition: var(--transition-2);
+}
+
+.blogDetail-card:hover .blogDetail-banner img {
+    transform: scale(1.1);
+}
+
+.blogDetail-content {
+    padding: 20px;
+}
+
+.blogDetail-meta-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.blogDetail-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--black-coral);
+    font-size: var(--fs-5);
+    line-height: 1.8;
+}
+
+.blogDetail-meta-item>ion-icon {
+    color: var(--red-crayola);
+    --ionicon-stroke-width: 45px;
+}
+
+.blogDetail-meta-item .blogDetail-meta-link {
+    color: var(--black-coral);
+    transition: var(--transition);
+}
+
+.blogDetail-meta-item .blogDetail-meta-link:is(:hover, :focus) {
+    color: var(--red-crayola);
+}
+
+.blogDetail-title>a {
+    color: inherit;
+    transition: var(--transition);
+}
+
+.blogDetail-title>a:is(:hover, :focus) {
+    color: var(--red-crayola);
+}

@@ -1,0 +1,115 @@
+.service {
+    background: var(--cultured);
+    padding-block: var(--section-padding);
+}
+
+.service-banner {
+    margin-bottom: 30px;
+}
+
+.service-content:first-of-type {
+    padding-bottom: 50px;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
+    margin-bottom: 50px;
+}
+
+.service .section-title {
+    margin-bottom: 30px;
+}
+
+.service-item {
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    box-shadow: 0 5px 25px 10px hsla(0, 0%, 0%, 0.02);
+    border-radius: var(--radius-8);
+}
+
+.service-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.service-item-icon {
+    background: var(--cultured);
+    color: var(--red-crayola);
+    min-width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.service-item-icon ion-icon {
+    --ionicon-stroke-width: 50px;
+}
+
+.service-item:hover .service-item-icon {
+    background: var(--red-crayola);
+    color: var(--white);
+}
+
+@media (min-width: 768px) {
+    .service-item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    .service-list {
+        padding-right: 80px;
+    }
+
+    .service-item:nth-child(even) {
+        transform: translateX(80px);
+    }
+}
+
+@media (min-width: 992px) {
+
+    .service .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 100px 40px;
+    }
+
+    .service-banner {
+        margin-bottom: 0;
+    }
+
+    .service-content:first-of-type {
+        padding-bottom: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .service-list {
+        padding-right: 50px;
+    }
+
+    .service-item:nth-child(even) {
+        transform: translateX(50px);
+    }
+
+    .service-item-icon {
+        min-width: 40px;
+        height: 40px;
+        font-size: 1.125rem;
+    }
+
+    .service-banner:last-of-type {
+        order: 1;
+    }
+}
+
+@media (min-width: 1200px) {
+    .service .container {
+        column-gap: 60px;
+    }
+
+    .service .section-title {
+        margin-bottom: 50px;
+    }
+
+}
