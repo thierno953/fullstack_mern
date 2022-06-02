@@ -5,6 +5,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 
 import userRouter from "./routes/user.js";
+import tourRouter from "./routes/tour.js";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(cors());
 
 
 app.use("/users", userRouter);
+app.use("/tour", tourRouter);
 app.get("/", (req, res) => {
     res.send("Welcome to person API");
 });

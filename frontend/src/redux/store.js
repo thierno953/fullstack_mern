@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import AuthReducer from "./features/authSlice";
-import blogSlice from "./features/blogSlice";
+import TourReducer from "./features/tourSlice";
 
 
 export default configureStore({
     reducer: {
         auth: AuthReducer,
-        blog: blogSlice
+        tour: TourReducer
     },
 });

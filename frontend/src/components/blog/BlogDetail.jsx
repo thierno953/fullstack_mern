@@ -4,82 +4,81 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import { getBlog } from '../../redux/features/blogSlice';
+import moment from "moment";
+import AccessAlarmsIcon from '@mui/icons-material/AccessAlarms';
+import { getRelatedTours, getTour } from '../../redux/features/tourSlice';
+import RelatedTours from './RelatedTours';
+import DisqusThread from './DisqusThread';
+
 
 const BlogDetail = () => {
-  const { blog } = useSelector((state) => state.blog);
-
   const dispatch = useDispatch();
-
-
+  const { tour, relatedTours } = useSelector((state) => ({ ...state.tour }));
   const { id } = useParams();
+  // tags
+  const tags = tour?.tags;
 
   useEffect(() => {
-    dispatch(getBlog(id));
+    tags && dispatch(getRelatedTours(tags))
+  }, [dispatch, tags]);
 
-  }, [id, dispatch]);
+  useEffect(() => {
+    if (id) {
+      dispatch(getTour(id));
+    }
+  }, [dispatch, id]);
 
   return (
     <>
       <section className="blogDetail">
         <div className="container">
-
           <p className="section-subtitle">Latest News</p>
-
           <h2 className="h2 section-title">Our latest articles & resources</h2>
-
           <ul className="blogDetail-list">
             <li>
               <div className="blogDetail-card">
 
                 <figure className="blogDetail-banner">
-
-                  <img src={blog.image} alt="How is technology working with new things?"
+                  <img src={tour.imageFile} alt={tour.title}
                     loading="lazy" className="w-100" />
                 </figure>
-
 
                 <div className="blogDetail-content">
                   <ul className="blog-meta-list">
 
                     <li className="blog-meta-item">
-                      <a href="#" className="blog-meta-link">{blog.name}</a>
+                      <a href="#" className="blog-meta-link">{tour.name}</a>
                     </li>
 
                     <li className="blog-meta-item">
-                      <ion-icon name="calendar-number-outline"><CalendarTodayIcon /></ion-icon>
+                      <ion-icon name="calendar-number-outline"><AccessAlarmsIcon /></ion-icon>
 
-                      <time className="blog-meta-time" datetime="2022-02-25">{blog.date}</time>
+                      <time className="blog-meta-time" datetime="2022-02-25"> {moment(tour.createdAt).fromNow()}</time>
                     </li>
-
                   </ul>
-
-                  <h3 className="h3 blogDetail-title">
-                    <a href="#">{blog.title}</a>
-                  </h3>
                   <ul className="blogDetail-meta-list">
-                    <li className="blogDetail-meta-item">
-                      <p>{blog.description}</p>
+                    <li>
+                      {tour && tour.tags && tour.tags.map((item) => `#${item} `)}
                     </li>
                   </ul>
                   <h3 className="h3 blogDetail-title">
-                    <a href="#">{blog.sub_card_title}</a>
+                    {tour.title}
                   </h3>
                   <ul className="blogDetail-meta-list">
                     <li className="blogDetail-meta-item">
-                      <p>{blog.sub_description}</p>
+                      {tour.description}
                     </li>
                   </ul>
                 </div>
               </div>
-
             </li>
-
-
           </ul>
+          <RelatedTours relatedTours={relatedTours} tourId={id} />
+          <DisqusThread id={id} title={tour.title} path={`/pserson/${id}`} style={{ fontSize: "14px" }} />
+
         </div>
       </section>
+
     </>
   )
 }
