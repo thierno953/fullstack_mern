@@ -1,6 +1,6 @@
 import React from 'react';
 import './service.css';
-import Image_1 from "../images/service-1.png"
+import Image_1 from "../images/newsletter.png"
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import ServiceApi from '../../api/ServiceApi';
 
@@ -16,9 +16,9 @@ const Services = () => {
 
                     <div className="service-content">
 
-                        <p className="section-subtitle">Services We Offer</p>
+       
 
-                        <h2 className="h2 section-title">We are here, to help your startup business</h2>
+                        <h2 className="h2 section-title">Services I offer</h2>
 
                         <ul className="service-list">
 

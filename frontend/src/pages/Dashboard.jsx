@@ -5,6 +5,7 @@ import { deleteTour, getToursByUser } from "../redux/features/tourSlice";
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
 import { Link } from "react-router-dom";
+import Spinner from "./Spinner";
 
 
 const Dashboard = () => {
@@ -27,19 +28,16 @@ const Dashboard = () => {
     }
   };
 
-  const excerpt = (str) => {
-    if (str.length > 40) {
-      str = str.substring(0, 40) + " ...";
-    }
-    return str;
-  };
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <>
       <section className="blog" id="blog">
         <div className="container">
           {userTours.length === 0 && (
-            <h2 className="section-title">No Persons available with the user: {user?.result?.name}</h2>
+            <h2 className="section-title">No Tours available with the user: {user?.result?.name}</h2>
           )}
           {userTours.length > 0 && (
             <h2 className="h2 section-title">Dashboard: {user?.result?.name}</h2>
@@ -56,9 +54,9 @@ const Dashboard = () => {
                     <div className="blog-content">
                       <ul className="blog-meta-list">
                         <li className="blog-meta-item">
-                        <Link to={`/editTour/${item._id}`}>
-                        <ion-icon name="calendar-number-outline"><EditIcon /></ion-icon>
-                        </Link>
+                          <Link to={`/editTour/${item._id}`}>
+                            <ion-icon name="calendar-number-outline"><EditIcon /></ion-icon>
+                          </Link>
                         </li>
                         <li className="blog-meta-item" onClick={() => handleDelete(item._id)}>
                           <ion-icon name="calendar-number-outline"><DeleteIcon /></ion-icon>

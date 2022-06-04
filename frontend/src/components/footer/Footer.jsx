@@ -14,46 +14,39 @@ const Footer = () => {
                 <div className="footer-top">
                     <div className="container">
                         <div className="footer-brand">
-                            <a href="#" className="logo">
-                                <img src={Image} alt="Solutry logo" />
-                            </a>
-                            <p className="section-text">
-                                Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-                                minim.
-                            </p>
-                            <div className="location-text">
+                        <div className="location-text">
                                 <div className="location-icon">
                                     <ion-icon name="location-outline"><HomeIcon /></ion-icon>
                                 </div>
                                 <address className="address">
-                                    Brussels
+                                    Brussels (Woluwe Saint Pierre)
                                 </address>
                             </div>
+                            <p className="section-text">
+                            I am most happy and feel satisfied when I am able to understand things. Listening to feedback is the most loved part of my job.
+                            </p>
+                          
                         </div>
                         <div className="quicklink-box">
                             <p className="h3 quicklink-title">Quick links</p>
 
                             <ul className="quicklink-list">
                                 <li>
-                                    <a href="#" className="quicklink">IT Startup</a>
+                                    <a href="https://ubiquitous-fox-005fca.netlify.app/" target="_blank" className="quicklink">Portfolio</a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="quicklink">Software</a>
+                                <a href="https://project-website-blog.netlify.app/" target="_blank" className="quicklink">Let U dev</a>
                                 </li>
 
                                 <li>
-                                    <a href="#" className="quicklink">Business</a>
-                                </li>
-
-                                <li>
-                                    <a href="#" className="quicklink">App</a>
+                                <a href="https://stackoverflow.com/" target="_blank" className="quicklink">Stackoverflow</a>
                                 </li>
                             </ul>
                         </div>
 
                         <div className="contact">
-                            <p className="h3 contact-title">Contact with us</p>
+                            <p className="h3 contact-title">Contact</p>
 
                             <ul className="contact-list">
 
@@ -84,20 +77,20 @@ const Footer = () => {
                     <div className="container">
 
                         <p className="copyright">
-                            &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+                            &copy; 2022 <a href="#">Thierno</a>. All Rights Reserved
                         </p>
 
                         <ul className="social-list">
 
                             <li>
-                                <a href="#" className="social-link">
-                                    <ion-icon name="logo-facebook"><GitHubIcon /></ion-icon>
+                                <a href="https://github.com/thierno953" target="_blank" className="social-link">
+                                   <GitHubIcon />
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" className="social-link">
-                                    <ion-icon name="logo-twitter"><LinkedInIcon /></ion-icon>
+                                <a href="https://www.linkedin.com/in/thierno-barry-0b8527203/"  target="_blank" className="social-link">
+                                    <LinkedInIcon />
                                 </a>
                             </li>
 

@@ -33,7 +33,7 @@ const BlogDetail = () => {
       <section className="blogDetail">
         <div className="container">
           <p className="section-subtitle">Latest News</p>
-          <h2 className="h2 section-title">Our latest articles & resources</h2>
+          <h2 className="h2 section-title">Latest articles & resources</h2>
           <ul className="blogDetail-list">
             <li>
               <div className="blogDetail-card">

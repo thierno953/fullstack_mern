@@ -19,12 +19,10 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    //prod -> 775610265870-nn901bhdcnmviubs1dj3ufdn1jul042g.apps.googleusercontent.com
-
-    // const devEnv = process.env.NODE_ENV !== "production";
-    // const clientId = devEnv
-    //     ? "775610265870-jc47veiba3ebfc968kn0f6bmumdrs32l.apps.googleusercontent.com"
-    //     : "775610265870-nn901bhdcnmviubs1dj3ufdn1jul042g.apps.googleusercontent.com";
+    const devEnv = process.env.NODE_ENV !== "production";
+    const clientId = devEnv
+        ? "775610265870-jrviknc8jp1vi312s9nkaodn1t6pt2pa.apps.googleusercontent.com"
+        : "775610265870-qfavcngfue4i61ld5344sce2gftb103i.apps.googleusercontent.com";
 
     useEffect(() => {
         error && toast.error(error);
@@ -66,10 +64,11 @@ const Login = () => {
                 </button>
                 <br />
                 <GoogleLogin
-                    clientId="775610265870-g2ktsc1u9evivu4fefdkhj4g44eos37b.apps.googleusercontent.com"
+                    clientId={clientId}
                     render={(renderProps) => (
                         <button
                             className='btn btn-primary'
+                            style={{ display: "none" }}
                             color="danger"
                             onClick={renderProps.onClick}
                             disabled={renderProps.disabled}
@@ -81,7 +80,7 @@ const Login = () => {
                     onFailure={googleFailure}
                     cookiePolicy="single_host_origin"
                 />
-                <br />
+     
                 <Link to="/register" style={{ fontSize: "12px" }}>
                     <p>Don't have an account ? Sign Up</p>
                 </Link>

@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000" });
+const devEnv = process.env.NODE_ENV !== "production";
+
+const { REACT_APP_DEV_API, REACT_APP_PROD_API } = process.env;
+
+const API = axios.create({ baseURL: `${devEnv ? REACT_APP_DEV_API : REACT_APP_PROD_API}` });
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem("profile")) {
@@ -16,7 +20,6 @@ export const googleSignIn = (result) => API.post("/users/googleSignIn", result);
 
 
 export const createTour = (tourData) => API.post("/tour", tourData);
-// export const getTours = () => API.get("/tour");
 export const getTours = (page) => API.get(`/tour?page=${page}`);
 export const getTour = (id) => API.get(`/tour/${id}`);
 export const deleteTour = (id) => API.delete(`/tour/${id}`);

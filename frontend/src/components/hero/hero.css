@@ -24,6 +24,11 @@
     margin-inline: auto;
 }
 
+.hero .btn a {
+   color: #fff;
+}
+
+
 @media (min-width: 992px) {
 
     .hero .container {

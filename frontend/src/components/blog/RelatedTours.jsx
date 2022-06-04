@@ -7,7 +7,7 @@ const blog = ({ relatedTours, tourId }) => {
     <>
       <section className="blog">
         <div className="container">
-        {relatedTours.length > 1 && <h4 className="h2 section-title">Related Tours</h4>}
+        {relatedTours.length > 1 && <h4 className="h2 section-title">Related</h4>}
           <ul className="blog-list">
             {relatedTours.filter((item) => item._id !== tourId).splice(0, 3).map((item) => (
               <>

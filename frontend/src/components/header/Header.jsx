@@ -72,7 +72,7 @@ const Header = () => {
 
                             {user?.result?._id && (
                                 <>
-                                    <li><Link to="/addTour">AddTours</Link></li>
+                                    <li><Link to="/addTour">AddPosts</Link></li>
                                     <li><Link to="/dashboard">Dashboard</Link></li>
                                 </>
                             )}

@@ -20,7 +20,7 @@ app.use(cors());
 app.use("/users", userRouter);
 app.use("/tour", tourRouter);
 app.get("/", (req, res) => {
-    res.send("Welcome to person API");
+    res.send("Welcome to tour API");
 });
 
 const port = process.env.PORT || 5000;

@@ -46,7 +46,7 @@ const Register = () => {
         <input type="password" required name="password" placeholder='Password' value={password} onChange={onInputChange} />
         <input type="password" required name="confirmPassword" placeholder='Confirm Password' value={confirmPassword} onChange={onInputChange} />
         <button className='btn btn-secondary'>
-          Login
+          Register
         </button>
         <br />
         <Link to="/login" style={{ fontSize: "12px" }}>

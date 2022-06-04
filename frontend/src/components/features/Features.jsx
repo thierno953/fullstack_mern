@@ -8,9 +8,9 @@ const Features = () => {
             <section className="features" id="features">
                 <div className="container">
 
-                    <p className="section-subtitle">How Can Help You</p>
+                    {/* <p className="section-subtitle"></p> */}
 
-                    <h2 className="h2 section-title">We’re helping teams do their best work</h2>
+                    <h2 className="h2 section-title">Everything you need to deploy your app.</h2>
 
                     <ul className="features-list">
 

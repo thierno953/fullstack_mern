@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { getTours, setCurrentPage } from '../../redux/features/tourSlice';
 import CardTour from './CardTour';
 import Pagination from '../../pages/pagination/Pagination';
+import Spinner from '../../pages/Spinner';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -23,15 +24,20 @@ const Blog = () => {
     dispatch(getTours(currentPage));
   }, [dispatch, currentPage]);
 
+  if (loading) {
+    return <Spinner />;
+  }
+
   return (
     <>
       <section className="blog" id="blog">
         <div className="container">
+        <h2 className="h2 section-title"> Latest Posts</h2>
           {tours.length === 0 && location.pathname !== "/" && (
-            <h2 className="section-title"> No Tours Found</h2>
+            <h2 className="section-title"> No Posts Found</h2>
           )}
           {tours.length === 0 && location.pathname !== "/" && (
-            <h2 className="h2 section-title"> We couldn't find any matches for "{searchQuery}"</h2>
+            <h2 className="section-title"> We couldn't find any matches for "{searchQuery}"</h2>
           )}
           <ul className="blog-list">
             {tours && tours.map((item, index) => (

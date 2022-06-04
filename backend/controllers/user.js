@@ -58,7 +58,7 @@ export const signup = async (req, res) => {
     }
 };
 
-// google
+// google auth
 export const googleSignIn = async (req, res) => {
     const { email, name, token, googleId } = req.body;
 
